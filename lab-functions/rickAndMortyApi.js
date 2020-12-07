@@ -10,4 +10,11 @@ const getCharacter = async (id) => {
     return profile;
 }
 
-module.exports = { getCharacter };
+
+const getManyCharacters = (ids) => {
+    return Promise.all(ids.map(id =>getCharacter(id)));
+}
+
+module.exports = { 
+    getCharacter, getManyCharacters 
+};
