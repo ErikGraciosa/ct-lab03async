@@ -15,7 +15,8 @@ describe('Testing verifies getCharacter function', () => {
 
     it('test will call getManyCharacters with parameter an array of numbers and returning: name, status, species', async () => {
         const ids = [5, 4];
-        const character = await getManyCharacters(ids);
+        const character = await getManyCharacters(ids)
+            
         expect(character).toEqual([
             { 
                 "name": "Jerry Smith",

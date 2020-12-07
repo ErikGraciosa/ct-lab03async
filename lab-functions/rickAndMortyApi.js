@@ -11,8 +11,9 @@ const getCharacter = async (id) => {
 }
 
 
-const getManyCharacters = (ids) => {
-    return Promise.all(ids.map(id =>getCharacter(id)));
+const getManyCharacters = async (ids) => {
+    const characterDetails = Promise.all(ids.map(async id => await getCharacter(id)));
+    return characterDetails;
 }
 
 module.exports = { 
