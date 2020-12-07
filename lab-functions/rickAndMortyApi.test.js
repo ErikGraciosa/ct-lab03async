@@ -11,4 +11,21 @@ describe('Testing verifies getCharacter function', () => {
           "species": "Human"
       });
     });  
+
+    it('test will call getCharacter with parameter id', async () => {
+        const character = await getMany(ids);
+        expect(character).toEqual([
+            { 
+                "name": "Jerry Smith",
+                "status": "Alive",
+                "species": "Human"
+            },
+            { 
+                "name": "Jerry Smith",
+                "status": "Alive",
+                "species": "Human"
+            }
+        ]);
+      });  
+
   });
