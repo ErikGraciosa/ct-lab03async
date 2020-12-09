@@ -1,13 +1,13 @@
 const fs = require('fs');
 const { copy } = require('./copyfile.js');
-const { reader, writer } = require('./utils.js');
+const { transform } = require('./transform.js');
 
 const source = './lab-functions/README.md';
 const destination = './lab-functions/CopyOfREADME.md';
 
 describe('Test verifies that function copies a file', () => {
 
-  afterEach(() => {
+  afterAll(() => {
     return fs.rmSync('./lab-functions/CopyOfREADME.md');
   });
 
@@ -17,6 +17,9 @@ describe('Test verifies that function copies a file', () => {
     expect(exists).toEqual(true);
   });
 
-   
+  it('test will call copy function and verify new file is present', async () => {
+    const response = await transform(source);
+    expect(response).toEqual('.ELIF  .TSET NI DEIPOC EB OT ELI');
+  });
 
 });
